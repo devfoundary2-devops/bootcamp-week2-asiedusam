@@ -19,7 +19,8 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: shopmicro-frontend
+        image: shopmicro-frontend:latest
+        imagePullPolicy: Never
         ports:
         - containerPort: 80 
           name: http
