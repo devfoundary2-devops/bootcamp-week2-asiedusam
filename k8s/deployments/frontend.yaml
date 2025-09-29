@@ -22,16 +22,16 @@ spec:
         image: shopmicro-frontend:latest
         imagePullPolicy: Never
         ports:
-        - containerPort: 80 
+        - containerPort: 3000
           name: http
         livenessProbe:
           httpGet:
-            path: /health   
-            port: 80        
+            path: /health
+            port: 3000
         readinessProbe:
           httpGet:
-            path: /health    
-            port: 80    
+            path: /health
+            port: 3000
         resources:
           requests:
             memory: "256Mi"
@@ -52,5 +52,6 @@ spec:
   selector:
     app: frontend
   ports:
-  - port: 80          
-    targetPort: 80  
+  - port: 3000
+    targetPort: 3000
+    name: http
